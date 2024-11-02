@@ -7,8 +7,8 @@ export default function MainLayout() {
     <div>
       {/* This is shared Markup */}
       <AppTitle />
-      <Outlet />
       <Navs/>
+      <Outlet />
     </div>
   );
 }
