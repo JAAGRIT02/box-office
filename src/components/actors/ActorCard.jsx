@@ -1,5 +1,5 @@
 export default function ActorCard(props) {
-  const { name, img, gender, country, birthday, deathday } = props;
+  const { name, img, gender, country, birthday, deathday,} = props;
   return (
     <div>
       <div>
