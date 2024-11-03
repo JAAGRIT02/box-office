@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import {  useState } from 'react';
 
 export default function SearchForm({ onSearch }) {
   const [searchString, setSearchString] = useState('');
   const [searchOption, setSearchOption] = useState('shows');
 
+
+  
   const onInputChange = evt => {
     // console.log(evt.target.value);
     // console.log(searchString);
@@ -50,3 +52,24 @@ export default function SearchForm({ onSearch }) {
     </form>
   );
 }
+
+
+
+//1)mount
+  // //2)rerender
+  // //2.5)logic before next rerender
+  // //3)unmounts
+  // console.log('rerender');
+  // //useEffect runs atleast once
+  // useEffect(() => {
+  //   // console.log('mounted');
+  //   console.log('search option changes', searchOption);
+
+  //   return () => {
+  //     console.log('before next useEffect run', searchOption);
+  //   };
+
+  //   // return () => {                  //cleanup function
+  //   //   console.log("unmounted");     //only runs if there is no dependencies
+  //   // };
+  // }, [searchOption]);
