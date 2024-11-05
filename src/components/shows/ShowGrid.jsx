@@ -1,30 +1,8 @@
-import { useEffect, useReducer } from 'react';
+import { useStarredShows } from '../../lib/useStarredShows';
 import ShowCard from './ShowCard';
 
-//custom hook
-const usePersistedReducer = (reducer, initialState, localStorageKey) => {
-  const [state, dispatch] = useReducer(reducer, initialState, initial => {
-    const persistedValue = localStorage.getItem(localStorageKey);
-    return persistedValue ? JSON.parse(persistedValue) : initial;
-  });
-  useEffect(() => {
-    localStorage.setItem(localStorageKey, JSON.stringify(state));
-  }, [state, localStorageKey]);
-  return [state, dispatch];
-};
-
-const starredShow = (currentStarred, action) => {
-  switch (action.type) {
-    case 'STAR':
-      return currentStarred.concat(action.showId);
-    case 'UNSTAR':
-      return currentStarred.filter(id => id !== action.showId);
-  }
-  return currentStarred;
-};
-
 export default function ShowGrid({ show }) {
-  const [starred, dispatchStarred] = usePersistedReducer(starredShow, [],"starredShows");
+  const [starred, dispatchStarred] = useStarredShows();
 
   console.log(starred);
 
@@ -45,6 +23,7 @@ export default function ShowGrid({ show }) {
       id={data.show.id}
       summary={data.show.summary}
       onStarClick={onStarClick}
+      isStarred={starred.includes(data.show.id)}
     />
   ));
 }
