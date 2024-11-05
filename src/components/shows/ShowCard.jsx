@@ -1,5 +1,4 @@
-
-export default function ShowCard({ name, img, summary, id }) {
+export default function ShowCard({ name, img, summary, id, onStarClick }) {
   const strippedSummary = summary
     ? summary.split(' ').slice(0, 10).join(' ').replace(/<.+?>/g, '')
     : 'No description found';
@@ -16,7 +15,7 @@ export default function ShowCard({ name, img, summary, id }) {
         <a href={`/show/${id}`} target="_blank" rel="noreferrer">
           Read more
         </a>
-        <button>Star me</button>
+        <button onClick={() => onStarClick(id)}>Star me</button>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import ActorGrid from '../components/actors/ActorGrid';
 import { useQuery } from 'react-query';
 
 export default function Home() {
+
   const [filter, setFilter] = useState(null);
 
   const { data: apiData, error: apiDataError } = useQuery({
@@ -52,6 +53,11 @@ export default function Home() {
   );
 }
 
+
+
+
+
+
 // const [apiData, setApiData] = useState(null);
 // const [apiDataError, setApiDataError] = useState(null);
 // const onSearch = async ({ q, searchOption }) => {
@@ -69,3 +75,32 @@ export default function Home() {
 // } catch (error) {
 //   setApiDataError(error);
 // }
+
+// const reducerfn = (currentCounter, action) => {
+//   switch (action.type) {
+//     case 'INCREMENT':
+//       return currentCounter + 1;
+//     case 'DECREMENT':
+//       return currentCounter - 1;
+//     case 'RESET':
+//       return 0;
+//   }
+//   return 0;
+// };
+
+// const [counter, dispatch] = useReducer(reducerfn, 0);
+
+// const onIncrement = () => {
+//   dispatch({ type: 'INCREMENT' });
+// };
+// const onDecrement = () => {
+//   dispatch({ type: 'DECREMENT' });
+// };
+// const onReset = () => {
+//   dispatch({ type: 'RESET' });
+// };
+
+// <div>{counter}</div>
+//     <button onClick={onIncrement}>Increment</button>
+//     <button onClick={onDecrement}>Decrement</button>
+//     <button onClick={onReset}>Reset</button>
