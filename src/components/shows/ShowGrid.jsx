@@ -4,7 +4,7 @@ import ShowCard from './ShowCard';
 export default function ShowGrid({ show }) {
   const [starred, dispatchStarred] = useStarredShows();
 
-  console.log(starred);
+  // console.log(starred);
 
   const onStarClick = showId => {
     const isStarred = starred.includes(showId);
