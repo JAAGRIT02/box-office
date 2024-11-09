@@ -2,6 +2,7 @@ import { useQuery } from 'react-query';
 import { getShowsbyIds } from '../api/tvMaze';
 import ShowGrid from '../components/shows/ShowGrid';
 import { useStarredShows } from '../lib/useStarredShows';
+import { TextCentre } from '../common/TextCentre';
 
 export default function Starred() {
   const [starredShowIds] = useStarredShows();
@@ -17,15 +18,15 @@ export default function Starred() {
   console.log(starredShow);
 
   if (starredShow?.length === 0) {
-    return <div>No shows are starred</div>;
+    return <TextCentre>No shows are starred</TextCentre>;
   }
 
   if (starredShow?.length > 0) {
     return <ShowGrid show={starredShow} />;
   }
   if (starredShowError) {
-    return <div>Error occured{starredShowError.message}</div>;
+    return <TextCentre>Error occured{starredShowError.message}</TextCentre>;
   }
 
-  return <div>Shows are still loading</div>;
+  return <TextCentre>Shows are still loading</TextCentre>;
 }
