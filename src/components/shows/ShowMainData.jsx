@@ -1,3 +1,8 @@
+
+import styled from 'styled-components';
+import { StarIcon } from '../../common/StarIcon';
+
+
 export default function ShowMainData(props) {
   const { name, img, rating, genres, summary } = props;
   return (
@@ -27,9 +32,6 @@ export default function ShowMainData(props) {
     </MainDataWrapper>
   );
 }
-
-import styled from 'styled-components';
-import { StarIcon } from '../../common/StarIcon';
 const MainDataWrapper = styled.div`
   display: flex;
   margin-bottom: 40px;

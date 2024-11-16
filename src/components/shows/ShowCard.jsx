@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { SearchCard } from '../../common/SearchCard';
 import { StarIcon } from '../../common/StarIcon';
+import { Link } from 'react-router-dom';
 export default function ShowCard({
   name,
   img,
@@ -22,9 +23,9 @@ export default function ShowCard({
       <p>{strippedSummary}</p>
 
       <div className="btns">
-        <a href={`/show/${id}`} target="_blank" rel="noreferrer">
+        <Link to={`/show/${id}`} target="_blank" rel="noreferrer">
           Read more
-        </a>
+        </Link>
         <button onClick={() => onStarClick(id)}>
           <StarIcon $active={isStarred} />
           {/* {isStarred ? 'unstar me' : 'Star me'} */}
