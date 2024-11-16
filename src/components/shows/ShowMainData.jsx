@@ -1,13 +1,12 @@
-
 import styled from 'styled-components';
 import { StarIcon } from '../../common/StarIcon';
-
+import notFoundImgSrc from '../../lib/not-found-image.png';
 
 export default function ShowMainData(props) {
   const { name, img, rating, genres, summary } = props;
   return (
     <MainDataWrapper>
-      <img src={img ? img.original : '/not-found-image.png'} alt={name} />
+      <img src={img ? img.original : notFoundImgSrc} alt={name} />
       <div className="text-side">
         <Headline>
           <h1>{name}</h1>

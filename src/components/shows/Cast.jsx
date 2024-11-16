@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import notFoundImgSrc from '../../lib/not-found-image.png'
+
 export default function Cast({ cast }) {
   return (
     <CastList>
@@ -8,7 +10,7 @@ export default function Cast({ cast }) {
             <div className="pic-wrapper">
               <img
                 src={
-                  person.image ? person.image.medium : '/not-found-image.png'
+                  person.image ? person.image.medium : notFoundImgSrc
                 }
                 alt={person.name}
               />

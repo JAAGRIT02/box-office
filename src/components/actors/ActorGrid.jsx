@@ -1,5 +1,6 @@
 import { FlexGrid } from '../../common/FlexGrid';
 import ActorCard from './ActorCard';
+import notFoundImgSrc from '../../lib/not-found-image.png'
 
 export default function ActorGrid({ actor }) {
   return (
@@ -15,7 +16,7 @@ export default function ActorGrid({ actor }) {
           img={
             data.person.image
               ? data.person.image.medium
-              : '/not-found-image.png'
+              : notFoundImgSrc
           }
         />
       ))}
